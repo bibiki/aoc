@@ -5,8 +5,8 @@ public class Day10 {
 	public static void main(String[] args) {
 		int length = 0;
 		String string = "3113322113";
-		int numOfIterationsPuzzlesAsksFor = 40;//for the first part
-//		int numOfIterationsPuzzlesAsksFor = 50;//for the second part
+//		int numOfIterationsPuzzlesAsksFor = 40;//for the first part
+		int numOfIterationsPuzzlesAsksFor = 50;//for the second part
 		for(int i = 0; i < numOfIterationsPuzzlesAsksFor; i++) {
 			string = whatYouSeeIsWhatYouGet(string);
 		}

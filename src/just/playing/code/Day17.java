@@ -1,5 +1,8 @@
 package just.playing.code;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class Day17 {
 
@@ -53,7 +56,7 @@ public class Day17 {
 		return currentCombination;
 	}
 	
-	private int getCombinationsSum(int[] containers, int[] combination) {
+	public int getCombinationsSum(int[] containers, int[] combination) {
 		int result = 0;
 		for(int i = 0; i < combination.length; i++) {
 			result += combination[i]*containers[i];
@@ -61,8 +64,20 @@ public class Day17 {
 		return result;
 	}
 	
-	private boolean isLastCombination(int[] combinationsCounter) {
+	public boolean isLastCombination(int[] combinationsCounter) {
 		return combinationsCounter.length == this.sumOfArrayElements(combinationsCounter);
+	}
+	
+	public Set<Integer> getSubset(Set<Integer> nums, int[] combination) {
+		Set<Integer> result = new HashSet<Integer>();
+		int count = 0;
+		for(Integer num : nums) {
+			if(combination[count] != 0) {
+				result.add(num);
+			}
+			count++;
+		}
+		return result;
 	}
 	
 	private int sumOfArrayElements(int[] array) {
